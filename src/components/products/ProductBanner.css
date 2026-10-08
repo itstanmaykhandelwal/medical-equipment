@@ -1,0 +1,124 @@
+.product-banner {
+    position: relative;
+    min-height: 380px;
+
+    display: flex;
+    align-items: flex-end;
+
+    background-image: url("https://riski.creedcreatives.net/rehat/wp-content/uploads/sites/53/2025/06/backgroundtest.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    overflow: hidden;
+}
+
+.product-banner-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    pointer-events: none;
+}
+
+.product-banner-container {
+    position: relative;
+    z-index: 1;
+
+    width: 98%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+    padding: 0 0 78px;
+}
+
+.product-banner-container h1 {
+    margin: 0;
+    color: var(--primary-dark);
+    font-size: 76px;
+    line-height: 1.05;
+    font-weight: 600;
+}
+
+.product-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 16px;
+    color: var(--primary-dark);
+
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.product-breadcrumb-separator {
+    color: #0a2d3c;
+}
+
+.product-breadcrumb-current {
+    color: #7a7a7a;
+}
+
+/* ================================
+   LARGE TABLET
+================================ */
+
+@media (max-width: 1200px) {
+    .product-banner {
+        min-height: 440px;
+    }
+
+    .product-banner-container {
+        width: 94%;
+        padding-bottom: 65px;
+    }
+
+    .product-banner-container h1 {
+        font-size: 58px;
+    }
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+    .product-banner {
+        min-height: 400px;
+    }
+
+    .product-banner-container h1 {
+        font-size: 50px;
+    }
+
+    .product-breadcrumb {
+        font-size: 19px;
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 767px) {
+    .product-banner {
+        min-height: 350px;
+    }
+
+    .product-banner-container {
+        width: calc(100% - 30px);
+        padding-bottom: 50px;
+    }
+
+    .product-banner-container h1 {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .product-breadcrumb {
+        margin-top: 20px;
+        font-size: 17px;
+    }
+}

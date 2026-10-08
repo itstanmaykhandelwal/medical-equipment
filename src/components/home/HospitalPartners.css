@@ -1,0 +1,263 @@
+.hospital-partners-section {
+    position: relative;
+
+    padding: 105px 0 120px;
+
+    background-color: #ebf3f3;
+
+    background-image: url("https://riski.creedcreatives.net/rehat/wp-content/uploads/sites/53/2025/06/backgroundtest.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    overflow: hidden;
+}
+
+.hospital-partners-section::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    background-color: #ebf3f3;
+
+    opacity: 0.4;
+
+    pointer-events: none;
+}
+
+.hospital-partners-container {
+    position: relative;
+    z-index: 1;
+
+    width: 98%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+}
+
+/* ---------------------------------
+   Heading
+--------------------------------- */
+
+.hospital-partners-heading {
+    text-align: center;
+}
+
+.hospital-partners-heading h2 {
+    margin: 0;
+
+    color: var(--primary-dark);
+
+    font-size: 48px;
+    line-height: 1.12;
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+}
+
+/* ---------------------------------
+   Grid
+--------------------------------- */
+
+.hospital-partners-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 38px;
+
+    margin-top: 65px;
+}
+
+/* ---------------------------------
+   Partner Card
+--------------------------------- */
+
+.hospital-partner-card {
+    position: relative;
+
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background: var(--white);
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* ---------------------------------
+   Default Active Card
+--------------------------------- */
+
+.hospital-partner-card:first-child {
+    background: var(--primary-dark);
+}
+
+/* ---------------------------------
+   Logo
+--------------------------------- */
+
+.hospital-partner-card img {
+    width: 65%;
+    max-width: 220px;
+    max-height: 75px;
+
+    display: block;
+
+    object-fit: contain;
+    /* filter: grayscale(1) contrast(1.15);
+
+    opacity: 0.65; */
+    filter: brightness(40%) contrast(100%) saturate(100%) blur(0px)
+        hue-rotate(0deg);
+    transition:
+        filter 0.35s ease,
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+/* ---------------------------------
+   First Card - Active Logo
+--------------------------------- */
+
+.hospital-partner-card:first-child img {
+    filter: brightness(0) invert(1);
+
+    opacity: 1;
+}
+
+/* ---------------------------------
+   Remove First Card Active State
+   When Any Card Is Hovered
+--------------------------------- */
+
+.hospital-partners-grid:has(.hospital-partner-card:hover)
+    .hospital-partner-card:first-child {
+    background: var(--white);
+
+    transform: none;
+}
+
+.hospital-partners-grid:has(.hospital-partner-card:hover)
+    .hospital-partner-card:first-child
+    img {
+    filter: brightness(40%) contrast(100%) saturate(100%) blur(0px)
+        hue-rotate(0deg);
+
+    transform: none;
+}
+
+/* ---------------------------------
+   Hovered Card
+--------------------------------- */
+
+.hospital-partner-card:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+.hospital-partner-card:hover img {
+    filter: brightness(0) invert(1);
+
+    opacity: 1;
+
+    transform: scale(1.03);
+}
+
+/* ---------------------------------
+   Large Tablet
+--------------------------------- */
+
+@media (max-width: 1200px) {
+    .hospital-partners-container {
+        width: 94%;
+    }
+
+    .hospital-partners-grid {
+        gap: 25px;
+    }
+
+    .hospital-partner-card {
+        height: 165px;
+    }
+}
+
+/* ---------------------------------
+   Tablet
+--------------------------------- */
+
+@media (max-width: 900px) {
+    .hospital-partners-section {
+        padding: 80px 0 90px;
+    }
+
+    .hospital-partners-heading h2 {
+        font-size: 44px;
+    }
+
+    .hospital-partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+
+        margin-top: 50px;
+    }
+
+    .hospital-partner-card {
+        height: 160px;
+    }
+}
+
+/* ---------------------------------
+   Mobile
+--------------------------------- */
+
+@media (max-width: 767px) {
+    .hospital-partners-section {
+        padding: 65px 0 70px;
+    }
+
+    .hospital-partners-container {
+        width: calc(100% - 30px);
+    }
+
+    .hospital-partners-heading h2 {
+        font-size: 36px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .hospital-partners-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-top: 40px;
+    }
+
+    .hospital-partner-card {
+        height: 145px;
+
+        border-radius: 15px;
+    }
+
+    .hospital-partner-card img {
+        width: 55%;
+    }
+}

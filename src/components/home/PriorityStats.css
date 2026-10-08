@@ -1,0 +1,262 @@
+.priority-section {
+    position: relative;
+    z-index: 5;
+
+    padding-bottom: 90px;
+
+    /*
+    Background transparent rakha hai taaki
+    Hero ke upar parent ka background na aaye.
+  */
+    background: linear-gradient(to bottom, transparent 92px, #ebf3f3 92px);
+}
+
+.priority-card {
+    position: relative;
+    z-index: 2;
+
+    width: 1264px;
+    min-height: 452px;
+
+    margin: 0 auto;
+    padding: 96px;
+    margin-top: -90px;
+
+    background: var(--white);
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 30px rgba(11, 48, 64, 0.02);
+}
+
+/* ---------------------------------
+   Top Content
+--------------------------------- */
+
+.priority-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+
+    align-items: start;
+}
+
+.priority-heading h2 {
+    margin: 0;
+
+    color: var(--primary-dark);
+
+    font-size: 48px;
+    line-height: 1.12;
+    font-weight: 500;
+    letter-spacing: -1.8px;
+}
+
+.priority-description {
+    padding-top: 2px;
+}
+
+.priority-description p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 16px;
+    line-height: 1.48;
+    font-weight: 400;
+}
+
+/* ---------------------------------
+   Stats
+--------------------------------- */
+
+.priority-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 40px;
+
+    margin-top: 95px;
+}
+
+.priority-stat {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.priority-stat-icon {
+    flex: 0 0 70px;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    color: var(--white);
+
+    border-radius: 8px;
+}
+
+.priority-stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.priority-stat-number {
+    color: var(--primary-dark);
+
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.priority-stat-label {
+    color: var(--text-light);
+
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/* ---------------------------------
+   Large Tablet
+--------------------------------- */
+
+@media (max-width: 1300px) {
+    .priority-card {
+        padding: 90px 70px;
+    }
+
+    .priority-top {
+        gap: 50px;
+    }
+
+    .priority-stats {
+        gap: 35px;
+    }
+
+    .priority-stat {
+        gap: 18px;
+    }
+
+    .priority-stat-icon {
+        flex-basis: 72px;
+
+        width: 72px;
+        height: 72px;
+    }
+
+    .priority-stat-number {
+        font-size: 30px;
+    }
+
+    .priority-stat-label {
+        font-size: 16px;
+    }
+}
+
+/* ---------------------------------
+   Tablet
+--------------------------------- */
+
+@media (max-width: 1024px) {
+    .priority-section {
+        /*
+      Tablet par overlap thoda kam
+    */
+        background: linear-gradient(to bottom, transparent 60px, #ebf3f3 60px);
+    }
+
+    .priority-card {
+        margin-top: -60px;
+
+        padding: 70px 50px;
+    }
+
+    .priority-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .priority-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+        margin-top: 60px;
+    }
+}
+
+/* ---------------------------------
+   Mobile
+--------------------------------- */
+
+@media (max-width: 767px) {
+    .priority-section {
+        /*
+      Mobile par overlap aur kam
+    */
+        background: linear-gradient(to bottom, transparent 40px, #ebf3f3 40px);
+
+        padding-bottom: 60px;
+    }
+
+    .priority-card {
+        width: calc(100% - 30px);
+
+        min-height: auto;
+
+        margin-top: -40px;
+
+        padding: 50px 25px;
+
+        border-radius: 16px;
+    }
+
+    .priority-heading h2 {
+        font-size: 36px;
+        line-height: 1.15;
+        letter-spacing: -1px;
+    }
+
+    .priority-description p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .priority-stats {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-top: 50px;
+    }
+
+    .priority-stat {
+        gap: 18px;
+    }
+
+    .priority-stat-icon {
+        flex-basis: 65px;
+
+        width: 65px;
+        height: 65px;
+    }
+
+    .priority-stat-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .priority-stat-number {
+        font-size: 27px;
+    }
+
+    .priority-stat-label {
+        font-size: 16px;
+    }
+}

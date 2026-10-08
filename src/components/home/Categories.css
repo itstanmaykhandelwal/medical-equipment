@@ -1,0 +1,339 @@
+.categories-section {
+    position: relative;
+
+    padding: 0 0 90px;
+
+    background: #ebf3f3;
+}
+
+.categories-container {
+    width: 98%;
+    margin: 0 auto;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+/* ---------------------------------
+   Common Card
+--------------------------------- */
+
+.category-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background-color: var(--white);
+
+    border-radius: 14px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.category-content {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+}
+
+/* ---------------------------------
+   Large Cards
+--------------------------------- */
+
+.category-card--large {
+    grid-column: span 3;
+
+    height: 325px;
+
+    padding: 48px;
+}
+
+/* ---------------------------------
+   Small Cards
+--------------------------------- */
+
+.category-card--small {
+    grid-column: span 2;
+
+    /* height: 295px; */
+
+    padding: 48px;
+    width: 415px;
+}
+.category-card--small .category-content{
+    width: 100%;
+}
+
+/* ---------------------------------
+   Background Images
+--------------------------------- */
+
+.category-card--thermometer {
+    background-image: url("../../assets/images/thermometers.png");
+
+    background-position: right bottom;
+    background-size: 220px auto;
+}
+
+.category-card--mask {
+    background-image: url("../../assets/images/medical-mask.png");
+
+    /*
+    Image screenshot ke according left side
+  */
+    background-position: left bottom;
+    background-size: 250px auto;
+}
+
+.category-card--surgical {
+    background-image: url("../../assets/images/surgical-tools.png");
+
+    background-position: right bottom;
+    background-size: 380px auto;
+}
+
+/* ---------------------------------
+   Mask Card Content
+--------------------------------- */
+
+.category-card--mask .category-content {
+    margin-left: auto;
+}
+
+/* ---------------------------------
+   Label
+--------------------------------- */
+
+.category-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 36px;
+
+    padding: 10px 20px 10px 20px;
+    background-color: #0a2d3c;
+    /* background: var(--primary-dark); */
+    color: var(--white);
+
+    border-radius: 25px;
+
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+/* ---------------------------------
+   Heading
+--------------------------------- */
+
+.category-card h3 {
+    margin: 20px 0 0;
+
+    color: var(--primary-dark);
+
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.category-card--small h3 {
+    font-size: 30px;
+}
+
+/* ---------------------------------
+   Description
+--------------------------------- */
+
+.category-card p {
+    max-width: 300px;
+
+    margin: 18px 0 0;
+
+    color: #7a7a7a;
+
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 400;
+}
+
+/* ---------------------------------
+   Button
+--------------------------------- */
+
+.category-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    height: 38px;
+
+    margin-top: 22px;
+    padding: 0 20px;
+
+    background: var(--primary);
+    color: var(--white);
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.category-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+@media (min-width: 901px) {
+    .categories-grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+    }
+
+    /* Top */
+    .category-card--thermometer {
+        grid-column: span 6;
+    }
+
+    .category-card--mask {
+        grid-column: span 6;
+    }
+
+    /* Bottom */
+    .category-card--small:nth-child(3) {
+        grid-column: span 3;
+    }
+
+    .category-card--surgical {
+        grid-column: span 6;
+        width: 100%;
+    }
+
+    .category-card--small:nth-child(5) {
+        grid-column: span 3;
+    }
+}
+/* ---------------------------------
+   Tablet
+--------------------------------- */
+
+@media (max-width: 1100px) {
+    .category-card--large,
+    .category-card--small {
+        padding: 35px;
+    }
+
+    .category-card h3 {
+        font-size: 23px;
+    }
+
+    .category-card--thermometer {
+        background-size: 250px auto;
+    }
+
+    .category-card--mask {
+        background-size: 250px auto;
+    }
+
+    .category-card--surgical {
+        background-size: 300px auto;
+    }
+}
+
+/* ---------------------------------
+   Tablet / Small Laptop
+--------------------------------- */
+
+@media (max-width: 900px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-card--large,
+    .category-card--small {
+        grid-column: span 1;
+    }
+
+    .category-card--large {
+        height: 310px;
+    }
+
+    .category-card--small {
+        height: 290px;
+    }
+
+    /*
+    Desktop ka extra width mobile/tablet par remove
+  */
+
+    .category-card--surgical {
+        /* width: 100%; */
+        width: 550px;
+    }
+}
+
+/* ---------------------------------
+   Mobile
+--------------------------------- */
+
+@media (max-width: 767px) {
+    .categories-section {
+        padding-bottom: 60px;
+    }
+
+    .categories-container {
+        width: calc(100% - 30px);
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .category-card--large,
+    .category-card--small {
+        grid-column: span 1;
+
+        height: 300px;
+
+        padding: 30px 25px;
+    }
+
+    .category-card h3,
+    .category-card--small h3 {
+        font-size: 23px;
+    }
+
+    .category-card p {
+        font-size: 14px;
+    }
+
+    .category-card--thermometer {
+        background-position: right bottom;
+        background-size: 210px auto;
+    }
+
+    .category-card--mask {
+        background-position: left bottom;
+        background-size: 210px auto;
+    }
+
+    .category-card--surgical {
+        background-position: right bottom;
+        background-size: 280px auto;
+
+        width: 100%;
+    }
+}

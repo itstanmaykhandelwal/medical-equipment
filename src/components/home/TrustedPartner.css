@@ -1,0 +1,360 @@
+.trusted-partner-section {
+    position: relative;
+
+    padding: 96px 0;
+
+    background: var(--white);
+}
+
+.trusted-partner-container {
+    width: 96%;
+    max-width: 1480px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 0.92fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+/* ---------------------------------
+   Left Content
+--------------------------------- */
+
+.trusted-partner-content {
+    width: 100%;
+}
+
+.trusted-partner-content h2 {
+    max-width: 820px;
+
+    margin: 0;
+
+    color: var(--primary-dark);
+
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+/* ---------------------------------
+   Intro
+--------------------------------- */
+
+.trusted-partner-intro {
+    max-width: 850px;
+
+    margin: 25px 0 0;
+
+    color: var(--primary-dark);
+
+    font-size: 17px;
+    line-height: 1.45;
+    font-weight: 600;
+}
+
+/* ---------------------------------
+   Description
+--------------------------------- */
+
+.trusted-partner-description {
+    max-width: 850px;
+
+    margin: 25px 0 0;
+
+    color: #858585;
+
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* ---------------------------------
+   Features
+--------------------------------- */
+
+.trusted-partner-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 70px;
+
+    margin-top: 25px;
+}
+
+.trusted-feature {
+    width: 100%;
+}
+
+.trusted-feature-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+.trusted-feature-icon {
+    flex: 0 0 50px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    color: var(--white);
+
+    border-radius: 50%;
+}
+
+.trusted-feature-heading h3 {
+    margin: 0;
+
+    color: var(--primary-dark);
+
+    font-size: 27px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+/* ---------------------------------
+   Feature Line
+--------------------------------- */
+
+.trusted-feature-line {
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 14px;
+
+    background: #BEBEBE;
+}
+
+/* ---------------------------------
+   Feature Description
+--------------------------------- */
+
+.trusted-feature p {
+    max-width: 380px;
+
+    margin: 20px 0 0;
+
+    color: #7a7a7a;
+
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ---------------------------------
+   Button
+--------------------------------- */
+
+.trusted-partner-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 54px;
+
+    margin-top: 25px;
+    padding: 0 45px;
+
+    background: var(--primary);
+    color: var(--white);
+
+    border: none;
+    border-radius: 6px;
+
+    font-family: "Outfit", sans-serif;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.trusted-partner-button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------
+   Right Image
+--------------------------------- */
+
+.trusted-partner-image {
+    width: 100%;
+
+    height: 650px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+}
+
+.trusted-partner-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+/* ---------------------------------
+   Large Tablet
+--------------------------------- */
+
+@media (max-width: 1300px) {
+    .trusted-partner-container {
+        width: 92%;
+
+        gap: 55px;
+    }
+
+    .trusted-partner-content h2 {
+        font-size: 42px;
+    }
+
+    .trusted-partner-features {
+        gap: 35px;
+    }
+
+    .trusted-feature-heading {
+        gap: 15px;
+    }
+
+    .trusted-feature-heading h3 {
+        font-size: 23px;
+    }
+
+    .trusted-partner-image {
+        height: 590px;
+    }
+}
+
+/* ---------------------------------
+   Tablet
+--------------------------------- */
+
+@media (max-width: 1024px) {
+    .trusted-partner-section {
+        padding: 80px 0;
+    }
+
+    .trusted-partner-container {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .trusted-partner-content h2 {
+        max-width: 800px;
+
+        font-size: 42px;
+    }
+
+    .trusted-partner-intro,
+    .trusted-partner-description {
+        max-width: 800px;
+    }
+
+    .trusted-partner-image {
+        height: 550px;
+    }
+}
+
+/* ---------------------------------
+   Mobile
+--------------------------------- */
+
+@media (max-width: 767px) {
+    .trusted-partner-section {
+        padding: 60px 0;
+    }
+
+    .trusted-partner-container {
+        width: calc(100% - 30px);
+
+        gap: 45px;
+    }
+
+    .trusted-partner-content h2 {
+        font-size: 34px;
+        line-height: 1.15;
+
+        letter-spacing: -0.8px;
+    }
+
+    .trusted-partner-intro {
+        margin-top: 25px;
+
+        font-size: 15px;
+    }
+
+    .trusted-partner-description {
+        margin-top: 22px;
+
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .trusted-partner-features {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-top: 40px;
+    }
+
+    .trusted-feature-heading {
+        gap: 15px;
+    }
+
+    .trusted-feature-icon {
+        flex-basis: 55px;
+
+        width: 55px;
+        height: 55px;
+    }
+
+    .trusted-feature-heading h3 {
+        font-size: 22px;
+    }
+
+    .trusted-feature-line {
+        margin-top: 18px;
+    }
+
+    .trusted-feature p {
+        margin-top: 18px;
+
+        font-size: 15px;
+    }
+
+    .trusted-partner-button {
+        height: 50px;
+
+        margin-top: 40px;
+        padding: 0 32px;
+    }
+
+    .trusted-partner-image {
+        height: 420px;
+
+        border-radius: 16px;
+    }
+}

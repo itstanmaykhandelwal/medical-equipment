@@ -1,0 +1,767 @@
+.hero {
+    position: relative;
+    /* min-height: 680px; */
+    /* height: 100vh; */
+    /* max-height: 780px; */
+
+    overflow: hidden;
+
+    background-image: url("https://riski.creedcreatives.net/rehat/wp-content/uploads/sites/53/2025/06/backgroundtest.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 70px;
+}
+
+/* White overlay from reference theme */
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    background: #ffffff;
+    opacity: 0.45;
+
+    pointer-events: none;
+}
+
+/* Light blue overlay */
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+
+    background: rgba(232, 245, 250, 0.25);
+
+    pointer-events: none;
+}
+
+/* ========================================
+   HERO CONTAINER
+======================================== */
+
+.hero__container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1450px, calc(100% - 50px));
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 55% 45%;
+
+    align-items: center;
+
+    padding-top: 180px;
+}
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero__content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 800px;
+
+    padding-top: 0;
+
+    transform: translateY(-20px);
+}
+
+/* ========================================
+   EYEBROW
+======================================== */
+
+.hero__eyebrow {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #148ca1;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+/* ========================================
+   TITLE
+======================================== */
+
+.hero__title {
+    margin: 0;
+
+    color: #0a2d3c;
+
+    font-size: 76px;
+    font-weight: 600;
+
+    line-height: 1.18;
+    letter-spacing: -1.8px;
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.hero__description {
+    max-width: 620px;
+
+    margin: 25px 0 34px;
+
+    color: #727b80;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.55;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.hero__button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 196px;
+    height: 49px;
+
+    padding: 0 27px;
+
+    border-radius: 8px;
+
+    background: #2996a9;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.hero__button:hover {
+    background: #167d91;
+
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   REVIEW
+======================================== */
+
+.hero__review {
+    display: flex;
+
+    align-items: center;
+
+    margin-top: 75px;
+}
+
+/* Avatar wrapper */
+
+.hero__avatars {
+    display: flex;
+
+    align-items: center;
+}
+
+/* Avatar */
+
+.hero__avatars img {
+    width: 52px;
+    height: 52px;
+
+    margin-left: -9px;
+
+    border: 2px solid #ffffff;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.hero__avatars img:first-child {
+    margin-left: 0;
+}
+
+/* Rating */
+
+.hero__rating {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-left: 28px;
+}
+
+.hero__rating strong {
+    color: #092f41;
+
+    font-size: 29px;
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+.hero__rating span {
+    margin-top: 8px;
+
+    color: #7b858a;
+
+    font-size: 14px;
+}
+
+/* ========================================
+   DOCTOR / RIGHT IMAGE
+======================================== */
+
+.hero__visual {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero__doctor {
+    z-index: 3;
+
+    width: auto;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: bottom center;
+}
+
+/* ========================================
+   HAPPY CLIENT CARD
+======================================== */
+
+.hero__client-card {
+    position: absolute;
+
+    right: 30px;
+    bottom: 80px;
+
+    z-index: 5;
+
+    width: 255px;
+    height: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #092f41;
+    color: #ffffff;
+
+    box-shadow: 0 18px 40px rgba(9, 47, 65, 0.18);
+}
+
+.hero__client-card strong {
+    font-size: 44px;
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+.hero__client-card span {
+    margin-top: 13px;
+
+    font-size: 17px;
+    font-weight: 400;
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (max-width: 1400px) {
+    .hero__container {
+        width: min(1250px, calc(100% - 70px));
+    }
+
+    .hero__title {
+        font-size: 62px;
+    }
+
+    .hero__doctor {
+        right: 0;
+
+        height: 94%;
+    }
+}
+
+/* ========================================
+   1200px
+======================================== */
+
+@media (max-width: 1200px) {
+    .hero__container {
+        width: min(1100px, calc(100% - 50px));
+    }
+
+    .hero__title {
+        font-size: 52px;
+    }
+
+    .hero__description {
+        max-width: 540px;
+    }
+
+    .hero__doctor {
+        right: -20px;
+
+        height: 90%;
+    }
+
+    .hero__client-card {
+        right: 0;
+    }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 991px) {
+    .hero {
+        height: auto;
+        min-height: auto;
+        max-height: none;
+    }
+
+    .hero__container {
+        width: min(720px, calc(100% - 40px));
+
+        grid-template-columns: 1fr;
+
+        height: auto;
+
+        padding-top: 90px;
+        padding-bottom: 0;
+    }
+
+    .hero__content {
+        max-width: 700px;
+
+        transform: none;
+    }
+
+    .hero__title {
+        font-size: 52px;
+    }
+
+    .hero__description {
+        max-width: 650px;
+    }
+
+    .hero__review {
+        margin-top: 50px;
+    }
+
+    .hero__visual {
+        height: 550px;
+
+        margin-top: 40px;
+    }
+
+    .hero__doctor {
+        height: 100%;
+
+        right: 50%;
+
+        transform: translateX(50%);
+    }
+
+    .hero__client-card {
+        right: 10%;
+
+        bottom: 50px;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+    .hero {
+        min-height: auto;
+
+        padding-bottom: 0;
+    }
+
+    .hero__container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        padding-top: 150px;
+        padding-bottom: 0;
+    }
+
+    .hero__content {
+        width: calc(100% - 30px);
+
+        max-width: none;
+
+        margin: 0 auto;
+
+        transform: none;
+    }
+
+    /* ==============================
+     EYEBROW
+  ============================== */
+
+    .hero__eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 12px;
+    }
+
+    /* ==============================
+     TITLE
+  ============================== */
+
+    .hero__title {
+        font-size: 40px;
+
+        line-height: 1.15;
+
+        letter-spacing: -1px;
+    }
+
+    .hero__title br {
+        display: none;
+    }
+
+    /* ==============================
+     DESCRIPTION
+  ============================== */
+
+    .hero__description {
+        max-width: none;
+
+        margin: 20px 0 28px;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    /* ==============================
+     BUTTON
+  ============================== */
+
+    .hero__button {
+        width: max-content;
+    }
+
+    /* ==============================
+     REVIEW
+  ============================== */
+
+    .hero__review {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-top: 145px;
+    }
+
+    .hero__avatars {
+        display: flex;
+
+        align-items: center;
+    }
+
+    .hero__avatars img {
+        width: 58px;
+        height: 58px;
+
+        margin-left: -8px;
+
+        border: 2px solid #ffffff;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+    }
+
+    .hero__avatars img:first-child {
+        margin-left: 0;
+    }
+
+    .hero__rating {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 28px;
+        margin-left: 0;
+    }
+
+    .hero__rating strong {
+        font-size: 32px;
+
+        line-height: 1;
+    }
+
+    .hero__rating span {
+        margin-top: 9px;
+
+        font-size: 15px;
+    }
+
+    /* ==============================
+     DOCTOR VISUAL
+  ============================== */
+
+    .hero__visual {
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        margin-top: 20px;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        justify-content: center;
+
+        overflow: visible;
+    }
+
+    .hero__doctor {
+        position: relative;
+
+        z-index: 3;
+
+        width: 100%;
+
+        height: auto;
+
+        max-width: 520px;
+
+        display: block;
+
+        object-fit: contain;
+
+        object-position: center bottom;
+
+        transform: none;
+    }
+
+    /* ==============================
+     HAPPY CLIENT CARD
+  ============================== */
+
+    .hero__client-card {
+        position: absolute;
+
+        z-index: 5;
+
+        left: 20px;
+        right: 20px;
+
+        bottom: 60px;
+
+        width: auto;
+        height: 130px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 20px;
+
+        background: #092f41;
+
+        box-shadow: 0 18px 40px rgba(9, 47, 65, 0.18);
+    }
+
+    .hero__client-card strong {
+        font-size: 38px;
+    }
+
+    .hero__client-card span {
+        margin-top: 9px;
+
+        font-size: 17px;
+    }
+    .hero__doctor{
+        right: auto;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero__container {
+        width: 100%;
+
+        padding-top: 150px;
+    }
+
+    .hero__content {
+        width: calc(100% - 30px);
+    }
+
+    .hero__eyebrow {
+        margin-bottom: 16px;
+
+        font-size: 11px;
+    }
+
+    .hero__title {
+        font-size: 35px;
+
+        line-height: 1.15;
+
+        letter-spacing: -1px;
+    }
+
+    .hero__description {
+        margin: 18px 0 26px;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+    .hero__button {
+
+        height: 55px;
+    }
+
+    /* ==============================
+     REVIEW
+  ============================== */
+
+    .hero__review {
+        margin-top: 60px;
+    }
+
+    .hero__avatars img {
+        width: 56px;
+        height: 56px;
+
+        margin-left: -9px;
+    }
+
+    .hero__rating {
+        margin-top: 27px;
+    }
+
+    .hero__rating strong {
+        font-size: 30px;
+    }
+
+    .hero__rating span {
+        margin-top: 8px;
+
+        font-size: 14px;
+    }
+
+    /* ==============================
+     DOCTOR
+  ============================== */
+
+    .hero__visual {
+        width: 100%;
+
+        margin-top: 18px;
+
+        overflow: visible;
+    }
+
+    .hero__doctor {
+        width: 100%;
+
+        height: auto;
+
+        max-width: none;
+
+        object-fit: contain;
+
+        object-position: center bottom;
+    }
+
+    /* ==============================
+     CLIENT CARD
+  ============================== */
+
+    .hero__client-card {
+        left: 19px;
+        right: 19px;
+
+        bottom: 58px;
+
+        height: 125px;
+
+        border-radius: 19px;
+    }
+
+    .hero__client-card strong {
+        font-size: 35px;
+    }
+
+    .hero__client-card span {
+        margin-top: 8px;
+
+        font-size: 16px;
+    }
+}

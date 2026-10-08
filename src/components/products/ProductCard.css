@@ -1,0 +1,196 @@
+.product-card {
+    overflow: hidden;
+
+    background: #ebf3f3;
+
+    border: 1px solid #bfc5c5;
+
+    border-radius: 13px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* ================================
+   PRODUCT IMAGE
+================================ */
+
+.product-card-image {
+    width: 100%;
+    height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 22px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+.product-card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-card-image img {
+    transform: scale(1.03);
+}
+
+/* ================================
+   PRODUCT CONTENT
+================================ */
+
+.product-card-content {
+    padding: 22px;
+}
+
+.product-card-content h2 {
+    margin: 0;
+    color: #0a2d3c;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 500;
+
+    letter-spacing: -0.5px;
+}
+
+/* ================================
+   PRICE
+================================ */
+
+.product-card-price {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 18px;
+}
+
+.product-old-price {
+    color: #64777d;
+
+    font-size: 15px;
+    line-height: 1;
+
+    text-decoration: line-through;
+}
+
+.product-current-price {
+    color: var(--primary-dark);
+
+    font-size: 15px;
+    line-height: 1;
+
+    font-weight: 600;
+
+    text-decoration: underline;
+}
+
+/* ================================
+   ADD TO CART
+================================ */
+
+.product-add-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    margin-top: 22px;
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    font-family: "Outfit", sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.product-add-button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1200px) {
+    .product-card-image {
+        height: 310px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .product-card-content {
+        padding: 22px;
+    }
+
+    .product-card-content h2 {
+        font-size: 25px;
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
+    .product-card-image {
+        height: 330px;
+    }
+}
+
+@media (max-width: 767px) {
+    .product-card-image {
+        height: 350px;
+    }
+
+    .product-card-content {
+        padding: 22px;
+    }
+
+    .product-card-content h2 {
+        font-size: 24px;
+    }
+
+    .product-old-price {
+        font-size: 16px;
+    }
+
+    .product-current-price {
+        font-size: 17px;
+    }
+}
