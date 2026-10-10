@@ -39,8 +39,8 @@
     text-decoration: none;
 }
 .footer-logo img{
-    width: 100px;
-    height: 100px;
+   height: auto;
+    width: 150px;
 }
 .footer-logo-mark {
     width: 58px;
