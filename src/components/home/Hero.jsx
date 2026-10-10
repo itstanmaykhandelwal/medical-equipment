@@ -17,7 +17,7 @@ const Hero = () => {
                         data-aos="fade-up"
                         data-aos-duration="400"
                     >
-                        REHAT - MEDICAL EQUIPMENT
+                        ECO Allies Association
                     </span>
 
                     <h1
