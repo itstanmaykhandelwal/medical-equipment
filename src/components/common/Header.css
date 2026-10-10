@@ -31,9 +31,9 @@
     align-items: center;
     gap: 10px;
 }
-.site-logo img{
-    width: 100px;
-    height: 100px;
+.site-logo img {
+    height: auto;
+    width: 150px;
 }
 .logo-mark {
     width: 48px;
