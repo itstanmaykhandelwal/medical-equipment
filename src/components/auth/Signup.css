@@ -1,0 +1,27 @@
+.signup-card {
+    max-width: 100%;
+}
+
+.signup-card .auth-heading {
+    margin-bottom: 28px;
+}
+
+.signup-card .auth-form {
+    gap: 18px;
+}
+
+.signup-card .auth-heading h1 {
+    font-size: 30px;
+}
+
+/* Responsive */
+
+@media (max-width: 520px) {
+    .signup-card .auth-heading h1 {
+        font-size: 26px;
+    }
+
+    .signup-card .auth-form {
+        gap: 16px;
+    }
+}

@@ -316,6 +316,31 @@
     border: 0;
 }
 
+.contact-feedback {
+    padding: 13px 16px;
+    margin: 0;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-feedback-success {
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+}
+
+.contact-feedback-error {
+    color: #991b1b;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+}
+
+.contact-form button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
 /* =================================
    LARGE TABLET
 ================================= */
