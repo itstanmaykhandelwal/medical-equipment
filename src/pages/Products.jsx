@@ -31,7 +31,7 @@ const Products = () => {
             } catch (err) {
                 if (err.name !== "AbortError") {
                     console.error("Products API error:", err);
-                    setError("Products load nahi ho paaye. Please try again.");
+                    setError("Products not loaded. Please try again.");
                 }
             } finally {
                 if (!controller.signal.aborted) {
