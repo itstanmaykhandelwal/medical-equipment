@@ -11,16 +11,21 @@ const orderRoutes = require("./routes/orderRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 
-
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+// Allowed frontend origins
+const allowedOrigins = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    ...(process.env.CORS_ORIGINS || "")
+        .split(",")
+        .map((origin) => origin.trim())
+        .filter(Boolean),
+];
 
-// Middleware
 app.use(
     cors({
         origin: (origin, callback) => {
-            // Allow requests without Origin, e.g. local scripts.
             if (!origin || allowedOrigins.includes(origin)) {
                 return callback(null, true);
             }
@@ -32,10 +37,10 @@ app.use(
 
 app.use(express.json({ limit: "1mb" }));
 
-// Serve uploaded product images
+// Existing uploaded images
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Health checks
+// Root health check (does not require database)
 app.get("/", (req, res) => {
     res.status(200).json({
         success: true,
@@ -43,6 +48,50 @@ app.get("/", (req, res) => {
     });
 });
 
+// Reuse the MongoDB connection across requests
+let connectionPromise = null;
+
+const connectDB = async () => {
+    if (mongoose.connection.readyState === 1) {
+        return;
+    }
+
+    if (!process.env.MONGODB_URI) {
+        throw new Error("MONGODB_URI is missing");
+    }
+
+    if (!process.env.JWT_SECRET) {
+        throw new Error("JWT_SECRET is missing");
+    }
+
+    if (!connectionPromise) {
+        connectionPromise = mongoose
+            .connect(process.env.MONGODB_URI)
+            .catch((error) => {
+                connectionPromise = null;
+                throw error;
+            });
+    }
+
+    await connectionPromise;
+};
+
+// Connect to MongoDB before API requests
+app.use("/api", async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        console.error("MongoDB connection error:", error.message);
+
+        res.status(503).json({
+            success: false,
+            message: "Database connection unavailable.",
+        });
+    }
+});
+
+// Health check
 app.get("/api/health", (req, res) => {
     res.status(200).json({
         success: true,
@@ -87,30 +136,14 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Start server after database connection
-const PORT = process.env.PORT || 5001;
+// Local development only
+if (require.main === module) {
+    const PORT = process.env.PORT || 5001;
 
-const startServer = async () => {
-    try {
-        if (!process.env.MONGODB_URI) {
-            throw new Error("MONGODB_URI is missing in server/.env");
-        }
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
 
-        if (!process.env.JWT_SECRET) {
-            throw new Error("JWT_SECRET is missing in server/.env");
-        }
-
-        await mongoose.connect(process.env.MONGODB_URI);
-
-        console.log("MongoDB connected successfully!");
-
-        app.listen(PORT, () => {
-            console.log(`Server running on http://localhost:${PORT}`);
-        });
-    } catch (error) {
-        console.error("Startup failed:", error.message);
-        process.exit(1);
-    }
-};
-
-startServer();
+// Vercel uses the exported Express application
+module.exports = app;
