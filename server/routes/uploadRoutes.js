@@ -1,3 +1,4 @@
+
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
@@ -11,6 +12,7 @@ const router = express.Router();
 
 const uploadDir = path.join(__dirname, "../uploads");
 
+// Create uploads directory if it does not exist
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
 }
@@ -19,6 +21,7 @@ const allowedTypes = {
     "image/jpeg": ".jpg",
     "image/png": ".png",
     "image/webp": ".webp",
+    "image/gif": ".gif",
 };
 
 const storage = multer.diskStorage({
@@ -31,7 +34,7 @@ const storage = multer.diskStorage({
 
         if (!extension) {
             return cb(
-                new Error("Only JPG, PNG and WEBP images are allowed.")
+                new Error("Only JPG, PNG, WEBP and GIF images are allowed.")
             );
         }
 
@@ -41,13 +44,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage,
+
     fileFilter: (req, file, cb) => {
         if (allowedTypes[file.mimetype]) {
             return cb(null, true);
         }
 
-        cb(new Error("Only JPG, PNG and WEBP images are allowed."));
+        cb(
+            new Error("Only JPG, PNG, WEBP and GIF images are allowed.")
+        );
     },
+
     limits: {
         fileSize: 5 * 1024 * 1024,
         files: 10,
